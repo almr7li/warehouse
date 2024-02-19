@@ -1,0 +1,15 @@
+{% extends "warehouse_register/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form action="" method="post" autocomplete="off">
+    {%csrf_token%}
+    {{form.name|as_crispy_field}}
+    {{form.price|as_crispy_field}}
+    <div class="row">
+        <div class="col-md-4">
+            {{form.quantity|as_crispy_field}}
+        </div>
+    </div>
+</form>
+{% endblock content %}
