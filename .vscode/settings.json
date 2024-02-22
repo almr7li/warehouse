@@ -1,0 +1,15 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "password": "M7mdm7md",
+            "username": "postgres",
+            "database": "WarehouseDB",
+            "name": "wareghouse",
+            "group": "Ware House Project"
+        }
+    ]
+}
