@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+
 <form action="" method="post" autocomplete="off">
     {%csrf_token%}
     {{form.name|as_crispy_field}}
@@ -11,6 +12,6 @@
             {{form.quantity|as_crispy_field}}
         </div>
     </div>
-    <button type="submit" class="btn btn-success"><i class="fas fa-database"></i> submit</button>
+    <button type="submit" class="btn btn-success"><i class="fas fa-database"></i> Submit</button>
 </form>
 {% endblock content %}

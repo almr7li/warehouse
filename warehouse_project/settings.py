@@ -43,6 +43,11 @@ INSTALLED_APPS = [
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+LOGIN_URL = 'login'
+
+LOGIN_REDIRECT_URL = 'goods_list'
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
