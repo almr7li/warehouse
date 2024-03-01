@@ -30,6 +30,7 @@
             <thead class="bg-primary text-white">
                 <tr>
                     <th>ID</th>
+                    <th>Preview</th> <!-- New column for preview picture -->
                     <th>Name</th>
                     <th>Price</th>
                     <th>Quantity</th>
@@ -40,6 +41,14 @@
                 {% for goods in goods_list %}
                     <tr>
                         <td>{{ goods.id }}</td>
+                        <td>
+                            {% if goods.picture %}
+                                <img src="{{ goods.picture.url }}" alt="{{ goods.name }}" width="100" height="100">
+                            {% else %}
+                                <!-- Placeholder if no picture available -->
+                                No Picture
+                            {% endif %}
+                        </td>
                         <td>{{ goods.name }}</td>
                         <td>{{ goods.price }}</td>
                         <td>{{ goods.quantity }}</td>

@@ -12,6 +12,10 @@
             {{form.quantity|as_crispy_field}}
         </div>
     </div>
+    <div class="form-group">
+        <label for="picture">Picture:</label>
+        <input type="file" class="form-control-file" id="picture" name="picture">
+    </div>
     <button type="submit" class="btn btn-success"><i class="fas fa-database"></i> Submit</button>
 </form>
 {% endblock content %}

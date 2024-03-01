@@ -10,6 +10,11 @@ class Goods(models.Model):
     def __str__(self):
         return self.title
 
+class WarehouseItem(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    picture = models.ImageField(upload_to='warehouse_pictures', default='default.png')  # This will store the image
+
 class ProductCategory(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()

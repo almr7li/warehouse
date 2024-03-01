@@ -25,8 +25,13 @@ def goods_form(request, id=0):
             return redirect('goods_list')  # Redirect to the goods list page after adding or updating goods
 
 def goods_list(request):
-    goods_list = Goods.objects.all()
-    return render(request, "warehouse_register/goods_list.html", {'goods_list': goods_list})
+    search_query = request.GET.get('search', '')
+    goods_list = Goods.objects.all().order_by('id')  # Order goods by ID
+    if search_query:
+        goods_list = goods_list.filter(name__icontains=search_query) | \
+                     goods_list.filter(price__icontains=search_query) | \
+                     goods_list.filter(quantity__icontains=search_query)
+    return render(request, "warehouse_register/goods_list.html", {'goods_list': goods_list, 'search_query': search_query})
 
 def goods_delete(request, id):
     # Retrieve the Goods object
